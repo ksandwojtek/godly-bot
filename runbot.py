@@ -4,7 +4,7 @@ import os
 import json
 with open("config.json", "r") as file:
     config = json.load(file)
-    if config["token"].lower() in ["token", "", " "] or config["prefix"].lower() in ["prefix", "", " "] or config["guild"].lower() in ["guild", "", " "] or config["admin"].lower() in ["admin", "", " "]:
+    if config["token"].lower() in ["token", "", " "] or config["prefix"].lower() in ["prefix", "", " "] or config["guild"] in ["guild", "", " "] or config["admin"] in ["admin", "", " "]:
         print("Opening config window")
         os.system("py configsetup.py")
         exit()
