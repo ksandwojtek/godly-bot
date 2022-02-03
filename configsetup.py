@@ -5,6 +5,10 @@ from tkinter import messagebox
 
 class Configwindow:
     def __init__(self, win):
+        self.xl = 30
+        self.yl = 50
+        self.xe = 160
+        self.ye = 50
         self.font = ('courier', 10, 'bold')
         self.lbl1 = Label(win, text='Token', font = self.font)
         self.lbl2 = Label(win, text='Prefix', font = self.font)
@@ -15,20 +19,18 @@ class Configwindow:
         self.t2 = Entry(font = self.font)
         self.t3 = Entry(font = self.font)
         self.t4 = Entry(font = self.font)
+        entries = [self.t1, self.t2, self.t3, self.t4]
+        for entry in entries:
+            entry.place(x=self.xe, y=self.ye)
+            self.ye += 50
 
-        self.lbl1.place(x=30, y=50)
-        self.t1.place(x=160, y=50)
-
-        self.lbl2.place(x=30, y=100)
-        self.t2.place(x=160, y=100)
-
-        self.lbl3.place(x=30, y=150)
-        self.t3.place(x=160, y=150)
-
-        self.lbl4.place(x=30,y=200)
-        self.t4.place(x=160,y=200)
+        labels = [self.lbl1, self.lbl2, self.lbl3, self.lbl4]
+        for label in labels:
+            label.place(x=self.xl, y=self.yl)
+            self.yl += 50
 
         self.b1.place(x=200, y=250, anchor=CENTER)
+
     def write(self):
         if self.t1.get() != '' or self.t2.get() != '' or self.t3.get() != '' or self.t4.get() != '':
             with open("config.json", "r+") as file:
