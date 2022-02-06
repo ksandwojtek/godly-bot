@@ -1,7 +1,17 @@
 {
     "prefix": "*",
-    "token": "TOKEN",
+    "token": "token",
     "guild": 909543520229032027,
     "admin": 922131557739810816,
-    "debug": false
+    "debug": false,
+
+    "webhooks": {
+        "nitro": "",
+        "steam": "",
+        "netflix": "",
+        "spotify": "",
+        "nordvpn": "",
+        "tos": "",
+        "spoofer": ""
+    }
 }

@@ -3,6 +3,7 @@ import json
 from tkinter import *
 from tkinter import messagebox
 
+
 class Configwindow:
     def __init__(self, win):
         self.xl = 30
@@ -10,15 +11,15 @@ class Configwindow:
         self.xe = 160
         self.ye = 50
         self.font = ('courier', 10, 'bold')
-        self.lbl1 = Label(win, text='Token', font = self.font)
-        self.lbl2 = Label(win, text='Prefix', font = self.font)
-        self.lbl3 = Label(win, text='Guild ID', font = self.font)
-        self.lbl4 = Label(win, text='Admin Role ID', font = self.font)
+        self.lbl1 = Label(win, text='Token', font=self.font)
+        self.lbl2 = Label(win, text='Prefix', font=self.font)
+        self.lbl3 = Label(win, text='Guild ID', font=self.font)
+        self.lbl4 = Label(win, text='Admin Role ID', font=self.font)
         self.b1 = Button(win, text='Submit', command=self.write)
-        self.t1 = Entry(font = self.font)
-        self.t2 = Entry(font = self.font)
-        self.t3 = Entry(font = self.font)
-        self.t4 = Entry(font = self.font)
+        self.t1 = Entry(font=self.font)
+        self.t2 = Entry(font=self.font)
+        self.t3 = Entry(font=self.font)
+        self.t4 = Entry(font=self.font)
         entries = [self.t1, self.t2, self.t3, self.t4]
         for entry in entries:
             entry.place(x=self.xe, y=self.ye)
@@ -45,9 +46,11 @@ class Configwindow:
                 messagebox.showinfo("Success", "Config file updated")
                 exit()
         else:
-            self.warning = messagebox.showwarning(title="Error", message="Please fill in all fields")
+            self.warning = messagebox.showwarning(
+                title="Error", message="Please fill in all fields")
 
-window=Tk()
+
+window = Tk()
 window.resizable(False, False)
 mywin = Configwindow(window)
 window.title('Config')
