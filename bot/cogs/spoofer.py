@@ -23,7 +23,7 @@ class Spoofer(commands.Cog):
         await ctx.message.delete()
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(
-                'https://discord.com/api/webhooks/933881458169348147/zVFLE9d6l3WqcO8pwpSiqT7MjP58h1m09EIu6ZEQP_dqY7_t89XculzXiWZIlRel01za', session=session)
+                self.config["webhooks"]["spoofer"], session=session)
 
             embedVar = nextcord.Embed(
                 title="**EAC/BE Spoofer**", color=0x4B0082)

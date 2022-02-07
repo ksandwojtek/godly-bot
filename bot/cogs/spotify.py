@@ -23,7 +23,7 @@ class Spotify(commands.Cog):
         await ctx.message.delete()
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(
-                'https://discord.com/api/webhooks/933862164182220830/iws-wOA4qxkHsfVTlUssMsXLbi3ahTYmUPwlR0bjwJSowMikT3JJUNR8_kTNwTSdOx2T', session=session)
+                self.config["webhooks"]["spotify"], session=session)
 
             embedVar = nextcord.Embed(title="**Spotify**", color=0x18d860)
             embedVar.add_field(name=f"<:price_l:933852732274663435>{categ}Pricing",

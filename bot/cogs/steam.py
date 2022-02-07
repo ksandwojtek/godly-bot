@@ -23,7 +23,7 @@ class Steam(commands.Cog):
         await ctx.message.delete()
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(
-                'https://discord.com/api/webhooks/933872729231343686/N3kUzJDkSZspBEEMJmJhdfLEf1YG3v-jKn-ZJtLrnJ3jh8YYUJRDh4u-uw86lIz5dpSr', session=session)
+                self.config["webhooks"]["steam"], session=session)
 
             embedVar = nextcord.Embed(title="**Steam**", color=0x0a1c45)
             embedVar.add_field(name=f"<:price_s:933873653077143593>{categ}Pricing",

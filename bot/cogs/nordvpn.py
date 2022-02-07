@@ -24,7 +24,7 @@ class Nordvpn(commands.Cog):
         await ctx.message.delete()
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(
-                'https://discord.com/api/webhooks/933878271832105021/36NfkII_xY-T2z1DhqpdmVJuVzSu-TQn-rvd0mCs0GowdQKHzQreEU6UDbPGrMxFV8pl', session=session)
+                self.config["webhooks"]["nordvpn"], session=session)
 
             embedVar = nextcord.Embed(title="**Netflix**", color=0x4884fc)
             embedVar.add_field(name=f"<:price_nv:933880035117498409>{categ}Pricing",

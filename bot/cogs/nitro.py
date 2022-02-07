@@ -24,7 +24,7 @@ class Nitro(commands.Cog):
         await ctx.message.delete()
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(
-                'https://discord.com/api/webhooks/939682148691095632/h6ZxXfpsQRmWobYUECR1KyAfPzCV2cTZ6X2yVOioqAP-n4KJWB_mos7lrkMYCz8U5oWt', session=session)
+                self.config["webhooks"]["nitro"], session=session)
 
             embedVar = nextcord.Embed(
                 title="**Discord Nitro**", color=0xd084d4)

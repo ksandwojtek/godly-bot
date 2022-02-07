@@ -25,7 +25,7 @@ class Netflix(commands.Cog):
         await ctx.message.delete()
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(
-                'https://discord.com/api/webhooks/933875559220510741/wF0SqiqFMzma9-JdIXUM991crurzsd7BSxVuysqCofXLFyiHF5gd4H2OhNJId_aCBvYw', session=session)
+                self.config["webhooks"]["netflix"], session=session)
 
             embedVar = nextcord.Embed(title="**Netflix**", color=0xe40414)
             embedVar.add_field(name=f"<:price_n:933876705402167347>{categ}Pricing",
